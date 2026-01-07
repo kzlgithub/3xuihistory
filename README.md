@@ -21,3 +21,5 @@ bash <(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.
 ```
 x-ui uninstall
 ```
+
+3X-UI开源项目：https://github.com/MHSanaei/3x-ui/tree/main
