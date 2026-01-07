@@ -4,3 +4,8 @@
 ```
 bash <(curl -Ls https://raw.githubusercontent.com/kzlgithub/3xuihistory/master/install.sh)
 ```
+
+
+```
+bash <(curl -Ls https://raw.githubusercontent.com/kzlgithub/3xuihistory/master/uninstall.sh)
+```
