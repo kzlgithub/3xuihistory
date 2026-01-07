@@ -10,3 +10,6 @@ bash <(curl -Ls https://raw.githubusercontent.com/kzlgithub/3xuihistory/master/i
 ```
 bash <(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.sh)
 ```
+
+### 使用原始安装脚本，如果申请证书失败，那么就把`https`改成`http`就可以访问
+![项目截图](images/failssl.png)
