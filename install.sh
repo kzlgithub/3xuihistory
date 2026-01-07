@@ -458,7 +458,7 @@ ssl_cert_issue() {
 # Reusable interactive SSL setup (domain or IP)
 # Sets global `SSL_HOST` to the chosen domain/IP for Access URL usage
 prompt_and_setup_ssl() {
-    # 不要申请SSL
+    # 不要SSL
     return 0
     local panel_port="$1"
     local web_base_path="$2"   # expected without leading slash
@@ -585,7 +585,7 @@ config_after_install() {
             echo -e "${green}Password:    ${config_password}${plain}"
             echo -e "${green}Port:        ${config_port}${plain}"
             echo -e "${green}WebBasePath: ${config_webBasePath}${plain}"
-            echo -e "${green}Access URL:  http://${SSL_HOST}:${config_port}/${config_webBasePath}${plain}"
+            echo -e "${green}Access URL:  http://${server_ip}:${config_port}/${config_webBasePath}${plain}"
             echo -e "${green}═══════════════════════════════════════════${plain}"
             echo -e "${yellow}⚠ IMPORTANT: Save these credentials securely!${plain}"
             echo -e "${yellow}⚠ SSL Certificate: Enabled and configured${plain}"
@@ -605,7 +605,7 @@ config_after_install() {
                 echo ""
                 # 不要申请SSL
                 # prompt_and_setup_ssl "${existing_port}" "${config_webBasePath}" "${server_ip}"
-                echo -e "${green}Access URL:  http://${SSL_HOST}:${existing_port}/${config_webBasePath}${plain}"
+                echo -e "${green}Access URL:  http://${server_ip}:${existing_port}/${config_webBasePath}${plain}"
             else
                 # If a cert already exists, just show the access URL
                 echo -e "${green}Access URL: http://${server_ip}:${existing_port}/${config_webBasePath}${plain}"
@@ -639,7 +639,7 @@ config_after_install() {
             echo ""
             # 不要申请SSL
             # prompt_and_setup_ssl "${existing_port}" "${existing_webBasePath}" "${server_ip}"
-            echo -e "${green}Access URL:  http://${SSL_HOST}:${existing_port}/${existing_webBasePath}${plain}"
+            echo -e "${green}Access URL:  http://${server_ip}:${existing_port}/${existing_webBasePath}${plain}"
         else
             echo -e "${green}SSL certificate already configured. No action needed.${plain}"
         fi
