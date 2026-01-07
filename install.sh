@@ -458,6 +458,8 @@ ssl_cert_issue() {
 # Reusable interactive SSL setup (domain or IP)
 # Sets global `SSL_HOST` to the chosen domain/IP for Access URL usage
 prompt_and_setup_ssl() {
+    # 不要申请SSL
+    return 0
     local panel_port="$1"
     local web_base_path="$2"   # expected without leading slash
     local server_ip="$3"
@@ -571,7 +573,7 @@ config_after_install() {
             echo -e "${yellow}Let's Encrypt now supports both domains and IP addresses!${plain}"
             echo ""
 
-            #do not setup ssl
+            # 不要申请SSL
             # prompt_and_setup_ssl "${config_port}" "${config_webBasePath}" "${server_ip}"
             
             # Display final credentials and access information
@@ -601,7 +603,8 @@ config_after_install() {
                 echo -e "${green}═══════════════════════════════════════════${plain}"
                 echo -e "${yellow}Let's Encrypt now supports both domains and IP addresses!${plain}"
                 echo ""
-                prompt_and_setup_ssl "${existing_port}" "${config_webBasePath}" "${server_ip}"
+                # 不要申请SSL
+                # prompt_and_setup_ssl "${existing_port}" "${config_webBasePath}" "${server_ip}"
                 echo -e "${green}Access URL:  https://${SSL_HOST}:${existing_port}/${config_webBasePath}${plain}"
             else
                 # If a cert already exists, just show the access URL
@@ -634,7 +637,8 @@ config_after_install() {
             echo -e "${green}═══════════════════════════════════════════${plain}"
             echo -e "${yellow}Let's Encrypt now supports both domains and IP addresses!${plain}"
             echo ""
-            prompt_and_setup_ssl "${existing_port}" "${existing_webBasePath}" "${server_ip}"
+            # 不要申请SSL
+            # prompt_and_setup_ssl "${existing_port}" "${existing_webBasePath}" "${server_ip}"
             echo -e "${green}Access URL:  https://${SSL_HOST}:${existing_port}/${existing_webBasePath}${plain}"
         else
             echo -e "${green}SSL certificate already configured. No action needed.${plain}"
