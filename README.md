@@ -5,6 +5,7 @@
 bash <(curl -Ls https://raw.githubusercontent.com/kzlgithub/3xuihistory/master/install.sh)
 ```
 
+<br><br><br><br>
 
 ### 原始安装脚本
 ```
